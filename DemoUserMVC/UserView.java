@@ -1,16 +1,17 @@
 package DemoUserMVC;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 public class UserView {
     public void printUserDetails(User user){
-        System.out.println("Datos del usuario: ");
-        System.out.println("Nombre de usuario: "+user.getUsername());
-        System.out.println("Contraseña: "+user.getPassword());
-        System.out.println("Email: "+user.getEmail());
+        String message ="USER DETAILS\n\n";
+        message += "Username : "+user.getUsername()+"\n";
+        message += "Password : "+user.getPassword()+"\n";
+        message +="Email : "+user.getEmail()+"\n";
+        JOptionPane.showMessageDialog(null, message);
     }
     public String getInput(String message){
-        System.out.println(message);
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+        return JOptionPane.showInputDialog(null,message);
     }
     public void showMessage(String message){
         System.out.println(message);
